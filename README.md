@@ -12,10 +12,10 @@ Normal NDI has rattles when not wired, but this implementation works fast even w
 ## How to use
 
 1. Get "libndi_embedded_ios.a"
-Get the NDI Embedded SDK from the [NDI SDK](https://www.ndi.tv/sdk/) site and install it. (NDI 2020-12-01 r119642 v4.6.0)
-or use this: https://drive.google.com/drive/folders/1nT_l-oE2tf70dcwh7P4OJBE5SH1R6aBw?usp=sharing
+Get the NDI Advanced SDK for Apple from the [NDI SDK](https://www.ndi.tv/sdk/) site and install it. (NDI 2022-02-10 r129281 v5.1.1)
+or use this: https://drive.google.com/drive/folders/1h5aAZxxSJwDmKHa8nOb_HmEgihnHzPVQ?usp=sharing
 
-2. Copy `lib/iOS/libndi_embedded_ios.a` to `/NDIHXSenderSample/NDIWrapper/NDIWrapper/wrapper/libndi_embedded_ios.a`
+2. Copy `lib/iOS/libndi_advanced_ios.a` to `/NDIHXSenderSample/NDIWrapper/NDIWrapper/wrapper/libndi_advanced_ios.a`
 
 3. Open `NDIHXSenderSample.xcworkspace` in Xcode, select the `NDIHXSenderSample` schema, and run it.
 
@@ -31,10 +31,10 @@ NDI HX送信をiPhoneから行う実装です。
 ## 本リポジトリの使い方
 
 1. libndi_embedded_ios.a 入手
-[NDI SDK](https://www.ndi.tv/sdk/)サイトよりNDI Embeded SDKを入手しインストール (NDI 2020-12-01 r119642 v4.6.0)
-もしくはこちらからダウンロード https://drive.google.com/drive/folders/1nT_l-oE2tf70dcwh7P4OJBE5SH1R6aBw?usp=sharing
+[NDI SDK](https://www.ndi.tv/sdk/)サイトよりNDI Advanced Developer Kitを入手しインストール (NDI 2022-02-10 r129281 v5.1.1)
+もしくはこちらからダウンロード https://drive.google.com/drive/folders/1h5aAZxxSJwDmKHa8nOb_HmEgihnHzPVQ?usp=sharing
 
-2. `lib/iOS/libndi_embedded_ios.a` をコピーし `/NDIHXSenderSample/NDIWrapper/NDIWrapper/wrapper/libndi_embedded_ios.a` に配置
+2. `lib/iOS/libndi_advanced_ios.a` をコピーし `/NDIHXSenderSample/NDIWrapper/NDIWrapper/wrapper/libndi_advanced_ios.a` に配置
 
 3. Xcodeで `NDIHXSenderSample.xcworkspace` を開き `NDIHXSenderSample` スキーマを選択し実行
 
