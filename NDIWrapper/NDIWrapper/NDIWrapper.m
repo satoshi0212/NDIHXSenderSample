@@ -1,10 +1,9 @@
 #import "NDIWrapper.h"
 #import "Processing.NDI.Lib.h"
-#import "Processing.NDI.Embedded.h"
+#import "Processing.NDI.Advanced.h"
 
 @implementation NDIWrapper {
     NDIlib_send_instance_t my_ndi_send;
-    NDIlib_compressed_packet_t* m_packet;
 }
 
 + (void)initialize {
@@ -120,8 +119,6 @@
         uint8_t *p_dst_extra_data = p_dst_hevc_data + [avcData length];
         memcpy(p_dst_extra_data, [extraData bytes], [extraData length]);
     }
-
-    m_packet = p_packet;
 
     NDIlib_video_frame_v2_t video_frame = { 0 };
     video_frame.xres = width;

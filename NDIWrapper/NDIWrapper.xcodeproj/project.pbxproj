@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8EB97531281C4B2C00FF4EB3 /* libndi_embedded_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB97530281C4B2C00FF4EB3 /* libndi_embedded_ios.a */; };
+		8EB975482823EE6C00FF4EB3 /* libndi_advanced_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB975472823EE6C00FF4EB3 /* libndi_advanced_ios.a */; };
 		AB05455325442F8D00D770A4 /* NDIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05455225442F8D00D770A4 /* NDIWrapper.m */; };
 		AB05455425442F8D00D770A4 /* NDIWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AB05455125442F8D00D770A4 /* NDIWrapper.h */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,12 @@
 
 /* Begin PBXFileReference section */
 		8EB9752F281C4B0100FF4EB3 /* Processing.NDI.Embedded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Embedded.h; sourceTree = "<group>"; };
-		8EB97530281C4B2C00FF4EB3 /* libndi_embedded_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libndi_embedded_ios.a; sourceTree = "<group>"; };
+		8EB975422823EDBF00FF4EB3 /* Processing.NDI.AVSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.AVSync.h; sourceTree = "<group>"; };
+		8EB975432823EDBF00FF4EB3 /* Processing.NDI.Genlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Genlock.h; sourceTree = "<group>"; };
+		8EB975442823EDBF00FF4EB3 /* Processing.NDI.KVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.KVM.h; sourceTree = "<group>"; };
+		8EB975452823EDBF00FF4EB3 /* Processing.NDI.KVM.keysymdef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.KVM.keysymdef.h; sourceTree = "<group>"; };
+		8EB975462823EDBF00FF4EB3 /* Processing.NDI.Advanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processing.NDI.Advanced.h; sourceTree = "<group>"; };
+		8EB975472823EE6C00FF4EB3 /* libndi_advanced_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libndi_advanced_ios.a; sourceTree = "<group>"; };
 		AB05454E25442F8D00D770A4 /* libNDIWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNDIWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB05455125442F8D00D770A4 /* NDIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDIWrapper.h; sourceTree = "<group>"; };
 		AB05455225442F8D00D770A4 /* NDIWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDIWrapper.m; sourceTree = "<group>"; };
@@ -51,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB97531281C4B2C00FF4EB3 /* libndi_embedded_ios.a in Frameworks */,
+				8EB975482823EE6C00FF4EB3 /* libndi_advanced_ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +92,7 @@
 		AB05455D254431C900D770A4 /* wrapper */ = {
 			isa = PBXGroup;
 			children = (
-				8EB97530281C4B2C00FF4EB3 /* libndi_embedded_ios.a */,
+				8EB975472823EE6C00FF4EB3 /* libndi_advanced_ios.a */,
 				AB05455E254431C900D770A4 /* include */,
 			);
 			path = wrapper;
@@ -96,6 +101,11 @@
 		AB05455E254431C900D770A4 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				8EB975462823EDBF00FF4EB3 /* Processing.NDI.Advanced.h */,
+				8EB975422823EDBF00FF4EB3 /* Processing.NDI.AVSync.h */,
+				8EB975432823EDBF00FF4EB3 /* Processing.NDI.Genlock.h */,
+				8EB975442823EDBF00FF4EB3 /* Processing.NDI.KVM.h */,
+				8EB975452823EDBF00FF4EB3 /* Processing.NDI.KVM.keysymdef.h */,
 				AB05455F254431C900D770A4 /* Processing.NDI.compat.h */,
 				AB054562254431C900D770A4 /* Processing.NDI.deprecated.h */,
 				AB054569254431C900D770A4 /* Processing.NDI.DynamicLoad.h */,

@@ -8,11 +8,12 @@ class VideoProcessor {
     public static let defaultFPS: Float64 = 30
 
     private var attributes: [NSString: AnyObject] {
-        var attributes: [NSString: AnyObject] = [:]
-        attributes[kCVPixelBufferIOSurfacePropertiesKey] = [:] as AnyObject
-        attributes[kCVPixelBufferMetalCompatibilityKey] = kCFBooleanTrue
-        attributes[kCVPixelBufferWidthKey] = NSNumber(value: VideoProcessor.defaultWidth)
-        attributes[kCVPixelBufferHeightKey] = NSNumber(value: VideoProcessor.defaultHeight)
+        let attributes: [NSString: AnyObject] = [
+            kCVPixelBufferIOSurfacePropertiesKey: [:] as AnyObject,
+            kCVPixelBufferMetalCompatibilityKey: kCFBooleanTrue,
+            kCVPixelBufferWidthKey: NSNumber(value: VideoProcessor.defaultWidth),
+            kCVPixelBufferHeightKey: NSNumber(value: VideoProcessor.defaultHeight)
+        ]
         return attributes
     }
 
@@ -27,10 +28,10 @@ class VideoProcessor {
         return properties
     }
 
-    private var _session: VTCompressionSession?
+    private var _compressionSession: VTCompressionSession?
     private var compressionSession: VTCompressionSession? {
         get {
-            if _session == nil {
+            if _compressionSession == nil {
                 guard
                     VTCompressionSessionCreate(
                         allocator: nil,
@@ -42,9 +43,9 @@ class VideoProcessor {
                         compressedDataAllocator: nil,
                         outputCallback: nil,
                         refcon: nil,
-                        compressionSessionOut: &_session
+                        compressionSessionOut: &_compressionSession
                     ) == noErr,
-                    let session = _session
+                    let session = _compressionSession
                 else {
                     print("Failed to create compression session.")
                     return nil
@@ -60,13 +61,13 @@ class VideoProcessor {
                     return nil
                 }
             }
-            return _session
+            return _compressionSession
         }
         set {
-            if let session = _session {
+            if let session = _compressionSession {
                 VTCompressionSessionInvalidate(session)
             }
-            _session = newValue
+            _compressionSession = newValue
         }
     }
 
@@ -84,15 +85,15 @@ class VideoProcessor {
             presentationTimeStamp: presentationTimeStamp,
             duration: sampleBuffer.duration,
             frameProperties: nil,
-            infoFlagsOut: nil) {
-            (status, _, sampleBuffer) in
+            infoFlagsOut: nil) { (status, _, resultSampleBuffer) in
+                guard
+                    status == noErr,
+                    let resultSampleBuffer = resultSampleBuffer else {
 
-            guard status == noErr, let sampleBuffer = sampleBuffer else {
-                print("Compression Failed for frame \(presentationTimeStamp)")
-                return
-            }
-
-            sendHandler(sampleBuffer)
+                    print("Compression Failed for frame \(presentationTimeStamp)")
+                    return
+                }
+                sendHandler(resultSampleBuffer)
         }
     }
 }
