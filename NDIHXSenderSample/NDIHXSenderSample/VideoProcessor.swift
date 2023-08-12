@@ -9,7 +9,7 @@ class VideoProcessor {
 
     private var attributes: [NSString: AnyObject] {
         let attributes: [NSString: AnyObject] = [
-            kCVPixelBufferIOSurfacePropertiesKey: [:] as AnyObject,
+            kCVPixelBufferIOSurfacePropertiesKey: NSDictionary(),
             kCVPixelBufferMetalCompatibilityKey: kCFBooleanTrue,
             kCVPixelBufferWidthKey: NSNumber(value: VideoProcessor.defaultWidth),
             kCVPixelBufferHeightKey: NSNumber(value: VideoProcessor.defaultHeight)
