@@ -136,7 +136,7 @@
     NDIlib_send_send_video_async_v2(my_ndi_send, &video_frame);
 }
 
-- (int)getFrameRateN:(float)fps {
+- (int)getFrameRateN:(double)fps {
     if (fps == 20.0) {
         return 20000;
     } else if (fps == 24.0) {
@@ -154,7 +154,7 @@
     }
 }
 
-- (int)getFrameRateD:(float)fps {
+- (int)getFrameRateD:(double)fps {
     if (fps == 29.97) {
         return 1001;
     } else if (fps == 59.94) {
